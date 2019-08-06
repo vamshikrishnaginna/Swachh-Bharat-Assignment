@@ -1,11 +1,14 @@
 package com.rubiconred.swachhbharat;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Wastage {
 
     private String wasteType;
     private String brand;
+    ArrayList<String> wasteTypeItems = new ArrayList<>();
+    ArrayList<String> brandItems = new ArrayList<>();
 
     public Wastage() {
         takeInputs();
@@ -77,6 +80,9 @@ public class Wastage {
             if (flag == 'n' || flag == 'N') {
                 break;
             } else {
+                wasteTypeItems.add(wasteType);
+                brandItems.add(brand);
+
             }
 
 
