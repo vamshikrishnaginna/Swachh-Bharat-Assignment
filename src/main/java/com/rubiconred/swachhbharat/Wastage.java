@@ -7,6 +7,8 @@ public class Wastage {
 
     private String wasteType;
     private String brand;
+    private int points = 0;
+    private int weights = 0;
     ArrayList<String> wasteTypeItems = new ArrayList<>();
     ArrayList<String> brandItems = new ArrayList<>();
 
@@ -16,6 +18,8 @@ public class Wastage {
 
 
     public void takeInputs() {
+
+        WeightsAndPoints wap = new WeightsAndPoints();
         while (true) {
             System.out.println("Select the category of waste");
             System.out.println("1.Plastic");
@@ -75,13 +79,18 @@ public class Wastage {
 
             }
 
+            wasteTypeItems.add(wasteType);
+            brandItems.add(brand);
+            weights = wap.getWeight(wasteType + "_" + brand) + weights;
+            points = wap.getPoints(wasteType + "_" + brand) + points;
+            System.out.println(weights + "__" + points);
             System.out.println("Do you want to add more?y/n");
+
             char flag = sc1.next().charAt(0);
             if (flag == 'n' || flag == 'N') {
                 break;
             } else {
-                wasteTypeItems.add(wasteType);
-                brandItems.add(brand);
+
 
             }
 

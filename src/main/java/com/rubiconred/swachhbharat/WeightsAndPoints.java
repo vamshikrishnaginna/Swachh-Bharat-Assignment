@@ -3,10 +3,10 @@ package com.rubiconred.swachhbharat;
 import java.util.Hashtable;
 
 public class WeightsAndPoints {
-
+    Hashtable<String, Integer> weights = new Hashtable<String, Integer>();
+    Hashtable<String, Integer> points = new Hashtable<String, Integer>();
     public WeightsAndPoints() {
-        Hashtable<String, Integer> weights = new Hashtable<String, Integer>();
-        Hashtable<String, Integer> points = new Hashtable<String, Integer>();
+
         /*Weights*/
         /*Plastic waste */
 
@@ -59,5 +59,16 @@ public class WeightsAndPoints {
 
 
     }
+
+    public int getWeight(String type) {
+        return weights.get(type);
+
+    }
+
+    public int getPoints(String type) {
+        return points.get(type);
+
+    }
+
 
 }
