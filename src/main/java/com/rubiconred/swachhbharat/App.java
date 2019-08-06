@@ -6,7 +6,7 @@ package com.rubiconred.swachhbharat;
 public class App {
     public static void main(String[] args) {
 
-        UserRegister newUser = new UserRegister();
+        User newUser = new User();
         System.out.println(newUser);
 
        /* Coupon object = new Coupon();
