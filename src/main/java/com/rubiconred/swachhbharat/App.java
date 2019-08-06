@@ -8,8 +8,10 @@ public class App {
 
         User newUser = new User();
         Wastage uWastage = new Wastage();
-        System.out.println(newUser);
-        System.out.println(uWastage);
+        Report report = new Report(newUser, uWastage);
+
+
+
 
 
     }

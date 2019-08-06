@@ -4,6 +4,7 @@ import java.security.SecureRandom;
 import java.util.Random;
 
 public class Coupon {
+
     public String createRandomCode(int codeLength) {
         char[] chars = "abcdefghijklmnopqrstuvwxyz1234567890".toCharArray();
         StringBuilder sb = new StringBuilder();
@@ -13,7 +14,7 @@ public class Coupon {
             sb.append(c);
         }
         String output = sb.toString();
-        System.out.println(output);
+
         return output;
     }
 }
