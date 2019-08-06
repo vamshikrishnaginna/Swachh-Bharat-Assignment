@@ -5,7 +5,7 @@ public class Report {
     int count = 0;
 
     public Report(User newUser, Wastage wastage) {
-
+        System.out.println("             REPORT           ");
         System.out.println("==============================");
         System.out.println("User:" + newUser.getuName());
         count = wastage.getTotalItems();
@@ -22,6 +22,7 @@ public class Report {
         System.out.println("          Total    " + wastage.getWeights() + "     " + wastage.getPoints());
         Coupon newCoupon = new Coupon();
         System.out.println("Coupon Code:" + newCoupon.createRandomCode(8));
+        System.out.println("==============================");
 
 
     }
