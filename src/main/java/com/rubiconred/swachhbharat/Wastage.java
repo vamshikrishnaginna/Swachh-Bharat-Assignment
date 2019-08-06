@@ -93,8 +93,8 @@ public class Wastage {
     @Override
     public String toString() {
         return "Wastage{" +
-                "wasteType='" + wasteType + '\'' +
-                ", brand='" + brand + '\'' +
+                "wasteTypeItems=" + wasteTypeItems +
+                ", brandItems=" + brandItems +
                 '}';
     }
 }
