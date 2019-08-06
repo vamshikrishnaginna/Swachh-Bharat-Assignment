@@ -10,6 +10,8 @@ public class User {
         uName = register.getuName();
         uPhone = register.getuPhone();
         uEmail = register.getuEmail();
+
+
     }
 
     public String getuName() {

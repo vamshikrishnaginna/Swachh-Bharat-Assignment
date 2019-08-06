@@ -7,13 +7,10 @@ public class App {
     public static void main(String[] args) {
 
         User newUser = new User();
+        Wastage uWastage = new Wastage();
         System.out.println(newUser);
+        System.out.println(uWastage);
 
-       /* Coupon object = new Coupon();
-        int i = 0;
-        while (i < 6) {
-            object.createRandomCode(7);
-            i++;
-        } */
+
     }
 }
