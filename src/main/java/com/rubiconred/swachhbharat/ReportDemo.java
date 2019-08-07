@@ -23,9 +23,15 @@ public class ReportDemo {
                 brandMaxlength = brand1.length();
             }
         }
+        System.out.print("SNO" + "\t" + "TYPE");
+        for (int j = 0; j <= typeMaxlength - 4; j++) {
 
+            System.out.print(" ");
+
+        }
+        System.out.print("BRAND\tWEIGHTS\tPOINTS");
         for (int i = 0; i < count; i++) {
-            System.out.print(i);
+            System.out.print(i + 1);
 
             System.out.print("\t");
 
