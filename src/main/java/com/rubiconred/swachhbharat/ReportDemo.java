@@ -39,6 +39,10 @@ public class ReportDemo {
 
             System.out.print("\t");
             System.out.println(wastage.getBrandItems().get(i));
+            System.out.print("\t");
+            System.out.println(wastage.getWeightsList().get(i));
+            System.out.print("\t");
+            System.out.println(wastage.getPointsList().get(i));
 
 
         }
