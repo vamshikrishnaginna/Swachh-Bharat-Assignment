@@ -2,6 +2,7 @@ package com.rubiconred.swachhbharat;
 
 public class Report {
 
+
     int count = 0;
 
     public Report(User newUser, Wastage wastage) {
