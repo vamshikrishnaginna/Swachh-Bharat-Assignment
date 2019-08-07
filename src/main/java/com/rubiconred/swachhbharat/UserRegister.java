@@ -28,8 +28,12 @@ public class UserRegister {
         uPhone = sc.nextLine();
         System.out.println("Enter the email-id: ");
         uEmail = sc.nextLine();
-        if (checkEmail(uEmail)) {
-            System.out.println("valid email");
+        System.out.println(checkEmail(uEmail));
+
+        while (!checkEmail(uEmail)) {
+            System.out.println("Enter the valid mail..!!");
+            uEmail = sc.nextLine();
+
         }
         System.out.println("=================================");
 
