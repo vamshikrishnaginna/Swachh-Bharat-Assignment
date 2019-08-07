@@ -13,7 +13,7 @@ public class UserRegister {
             "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                     + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
-    private static final String PHONE_PATTERN = "[7-9][0-9]{9}";
+    private static final String PHONE_PATTERN = "(0/91)?[7-9][0-9]{9}";
 
     private Pattern patternEmail;
     private Pattern patternPhoneNumber;
@@ -32,7 +32,7 @@ public class UserRegister {
         uName = sc.nextLine();
         System.out.println("Enter the phone number: ");
         uPhone = sc.nextLine();
-        while (!isValid(uPhone)) {
+        while (!checkPhoneNumber(uPhone)) {
             System.out.println("Enter the valid Phone Number..!!");
             uPhone = sc.nextLine();
 
@@ -40,8 +40,6 @@ public class UserRegister {
 
         System.out.println("Enter the email-id: ");
         uEmail = sc.nextLine();
-        System.out.println(checkEmail(uEmail));
-
         while (!checkEmail(uEmail)) {
             System.out.println("Enter the valid mail..!!");
             uEmail = sc.nextLine();
@@ -52,12 +50,12 @@ public class UserRegister {
     }
 
     private boolean checkPhoneNumber(String uPhone) {
-        matcher = patternEmail.matcher(uPhone);
+        matcher = patternPhoneNumber.matcher(uPhone);
         return matcher.matches();
     }
 
     private boolean checkEmail(String uEmail) {
-        matcher = patternPhoneNumber.matcher(uEmail);
+        matcher = patternEmail.matcher(uEmail);
         return matcher.matches();
     }
 
