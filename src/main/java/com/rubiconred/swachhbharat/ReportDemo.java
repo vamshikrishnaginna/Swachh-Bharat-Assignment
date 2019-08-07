@@ -30,6 +30,7 @@ public class ReportDemo {
                 brandMaxlength = brand1.length();
             }
         }
+        System.out.println("---------------------------------------");
         System.out.print("SNO" + "\t" + "TYPE");
         for (int j = 0; j <= typeMaxlength - 4; j++) {
 
@@ -37,7 +38,7 @@ public class ReportDemo {
 
         }
         System.out.println("\tBRAND\tWEIGHTS\tPOINTS");
-        System.out.println("_____________________________");
+        System.out.println("---------------------------------------");
 
         for (int i = 0; i < count; i++) {
             System.out.print(i + 1);
@@ -63,7 +64,7 @@ public class ReportDemo {
 
 
         }
-        System.out.println("_____________________________");
+        System.out.println("---------------------------------------");
         System.out.println("Total Weights:" + totalWeight + "gms\tTotal Points:" + totalPoints);
 
 
