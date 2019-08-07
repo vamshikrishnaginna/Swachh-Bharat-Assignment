@@ -1,0 +1,20 @@
+<com.rubiconred.swachhbharat.Type>
+    <plastic>
+        <pespi>
+            <weight>30</weight>
+            <points>20</points>
+        </pespi>
+        <coke>
+            <weight>30</weight>
+            <points>20</points>
+        </coke>
+        <sprite>
+
+        </sprite>
+        <other>
+
+        </other>
+    </plastic>
+    <metal></metal>
+    <metal></metal>
+</com.rubiconred.swachhbharat.Type>

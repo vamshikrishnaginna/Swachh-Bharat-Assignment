@@ -52,34 +52,38 @@ public class Wastage {
 
 
             }
-
+            if (wasteType != "other") {
             System.out.println("Select the brand");
             System.out.println("1.Pepsi");
             System.out.println("2.Coke");
             System.out.println("3.Sprite");
             System.out.println("4.Other");
             Scanner sc2 = new Scanner(System.in);
-            switch (sc2.nextInt()) {
-                case 1:
-                    brand = "pepsi";
-                    break;
+                switch (sc2.nextInt()) {
+                    case 1:
+                        brand = "pepsi";
+                        break;
 
-                case 2:
-                    brand = "coke";
-                    break;
+                    case 2:
+                        brand = "coke";
+                        break;
 
-                case 3:
-                    brand = "sprite";
-                    break;
+                    case 3:
+                        brand = "sprite";
+                        break;
 
-                case 4:
-                    brand = "other";
-                    break;
-                default:
-                    System.out.println("Please select the valid brand");
-                    break;
+                    case 4:
+                        brand = "other";
+                        break;
+                    default:
+                        System.out.println("Please select the valid brand");
+                        break;
 
 
+                }
+            } else {
+
+                brand = "other";
             }
 
             weights = wap.getWeight(wasteType + "_" + brand) + weights;
@@ -89,14 +93,15 @@ public class Wastage {
             weightsList.add(weights);
             pointsList.add(points);
             totalItems = wasteTypeItems.size();
+
             System.out.println("Do you want to add more?y/n");
 
             char flag = sc1.next().charAt(0);
-            if (flag == 'n' || flag == 'N') {
+
+            if (flag == 'y' || flag == 'Y') {
+
+            } else if (flag == 'n' || flag == 'N') {
                 break;
-            } else {
-
-
             }
 
 
