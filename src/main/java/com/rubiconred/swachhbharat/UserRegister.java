@@ -16,13 +16,16 @@ public class UserRegister {
     private static final String PHONE_PATTERN =
             "(0/91)?[7-9][0-9]{9}";
 
-    private Pattern pattern;
+    private Pattern patternEmail;
+    private Pattern patternPhoneNumber;
     private Matcher matcher;
 
 
     public UserRegister() {
 
-        pattern = Pattern.compile(EMAIL_PATTERN);
+        patternEmail = Pattern.compile(EMAIL_PATTERN);
+        patternEmail = Pattern.compile(PHONE_PATTERN);
+
         Scanner sc = new Scanner(System.in);
         System.out.println("          Register Here          ");
         System.out.println("=================================");
@@ -30,6 +33,11 @@ public class UserRegister {
         uName = sc.nextLine();
         System.out.println("Enter the phone number: ");
         uPhone = sc.nextLine();
+        while (!checkPhoneNumber(uEmail)) {
+            System.out.println("Enter the valid Phone Number..!!");
+            uEmail = sc.nextLine();
+
+        }
 
         System.out.println("Enter the email-id: ");
         uEmail = sc.nextLine();
@@ -44,8 +52,13 @@ public class UserRegister {
 
     }
 
+    private boolean checkPhoneNumber(String uPhone) {
+        matcher = patternEmail.matcher(uPhone);
+        return matcher.matches();
+    }
+
     private boolean checkEmail(String uEmail) {
-        matcher = pattern.matcher(uEmail);
+        matcher = patternPhoneNumber.matcher(uEmail);
         return matcher.matches();
 
 
