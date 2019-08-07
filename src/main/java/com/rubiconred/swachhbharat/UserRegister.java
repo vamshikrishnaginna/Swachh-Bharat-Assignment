@@ -1,13 +1,24 @@
 package com.rubiconred.swachhbharat;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class UserRegister {
     private String uName;
     private String uPhone;
     private String uEmail;
 
+    private static final String EMAIL_PATTERN =
+            "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                    + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+    private Pattern pattern;
+    private Matcher matcher;
+
+
     public UserRegister() {
+
+        pattern = Pattern.compile(EMAIL_PATTERN);
         Scanner sc = new Scanner(System.in);
         System.out.println("          Register Here          ");
         System.out.println("=================================");
@@ -17,7 +28,17 @@ public class UserRegister {
         uPhone = sc.nextLine();
         System.out.println("Enter the email-id: ");
         uEmail = sc.nextLine();
+        if (checkEmail(uEmail)) {
+            System.out.println("valid email");
+        }
         System.out.println("=================================");
+
+    }
+
+    private boolean checkEmail(String uEmail) {
+        matcher = pattern.matcher(uEmail);
+        return matcher.matches();
+
 
     }
 
