@@ -12,6 +12,10 @@ public class UserRegister {
     private static final String EMAIL_PATTERN =
             "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                     + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+    private static final String PHONE_PATTERN =
+            "(0/91)?[7-9][0-9]{9}";
+
     private Pattern pattern;
     private Matcher matcher;
 
@@ -26,6 +30,7 @@ public class UserRegister {
         uName = sc.nextLine();
         System.out.println("Enter the phone number: ");
         uPhone = sc.nextLine();
+
         System.out.println("Enter the email-id: ");
         uEmail = sc.nextLine();
         System.out.println(checkEmail(uEmail));
