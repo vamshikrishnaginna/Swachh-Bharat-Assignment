@@ -21,22 +21,22 @@ Imagine that the Govt of India, as part of Swachh Bharat scheme, has setup recyc
 Your task is to create a prototype of this software application meeting the following requirements
 
 - Users can register themselves
-- Submit information w.r.t various kinds of wastage like cans, glass bottles etc.,
+- Submit information w.r.t various kinds of wastageDispose like cans, glass bottles etc.,
 - Receive coupon points calculated based on amount of waste deposited.
 - Claim the points instantly
 - More than one user can use the application at the same time
-- The application accepts three types of wastage, Plastic, Metal and Glass
-- The application should allow to accept multiple types of wastage in a single session
-- Upon providing the quantity, type and brand of the wastage and submitting for recycle, A detailed report containing count, type, individual weight per type and total weight of the wastage submitted has to be generated along with that display a message with unique coupon code and the number of coupon points earned.
+- The application accepts three types of wastageDispose, Plastic, Metal and Glass
+- The application should allow to accept multiple types of wastageDispose in a single session
+- Upon providing the quantity, type and brand of the wastageDispose and submitting for recycle, A detailed report containing count, type, individual weight per type and total weight of the wastageDispose submitted has to be generated along with that display a message with unique coupon code and the number of coupon points earned.
 - Ability to store the statistics report generated (Quantity, Weight, Consumer details, Points etc.) to a file on disk (XML or JSON format)
 
 Some of the important data attributes involved are
 
 - Details of the user to whom the coupon points are to be rewarded. (name, phone, email)
-- Type (e.g. plastic) and Brand (e.g. Pepsi) of wastage returned by a particular user
+- Type (e.g. plastic) and Brand (e.g. Pepsi) of wastageDispose returned by a particular user
 - Weight and total count per type and brand submitted for recycling
 - Total number of points the user has earned
-- After providing the type of wastage, their specific brand have to be provided as inputs (so there is a many to many relationship between type and brand)
+- After providing the type of wastageDispose, their specific brand have to be provided as inputs (so there is a many to many relationship between type and brand)
 - Each type and brand combination should be assigned a specific weight and coupon points
 
 Consider the below example for better understanding
@@ -49,9 +49,9 @@ Assume multiple types and brands, Assign the weights and points accordingly and 
 
 The final solution should allow us to run a simulation of an application where we would provide the following data
 
-- Capture the details of the user returning the wastage (Name, Contact Details, Email address).
-- Capture the category of wastage (Plastic, Metal, Glass)
-- Mark the brand of the wastage if known else default to others
+- Capture the details of the user returning the wastageDispose (Name, Contact Details, Email address).
+- Capture the category of wastageDispose (Plastic, Metal, Glass)
+- Mark the brand of the wastageDispose if known else default to others
 - Upon submitting for recycle, a statistics report and a random coupon code has to be generated and the coupon points earned has to be returned to the user
 
 # Technical requirements

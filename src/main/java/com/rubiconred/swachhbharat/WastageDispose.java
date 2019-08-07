@@ -3,7 +3,7 @@ package com.rubiconred.swachhbharat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Wastage {
+public class WastageDispose {
 
     private String wasteType;
     private String brand;
@@ -16,7 +16,7 @@ public class Wastage {
     private int totalItems = 0;
 
 
-    public Wastage() {
+    public WastageDispose() {
         takeInputs();
     }
 
@@ -86,8 +86,8 @@ public class Wastage {
                 brand = "other";
             }
 
-            weights = wap.getWeight(wasteType + "_" + brand) + weights;
-            points = wap.getPoints(wasteType + "_" + brand) + points;
+            weights = wap.getWeight(wasteType + "_" + brand);
+            points = wap.getPoints(wasteType + "_" + brand);
             wasteTypeItems.add(wasteType);
             brandItems.add(brand);
             weightsList.add(weights);
