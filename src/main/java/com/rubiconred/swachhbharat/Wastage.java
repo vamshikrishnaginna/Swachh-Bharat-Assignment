@@ -97,7 +97,11 @@ public class Wastage {
             System.out.println("Do you want to add more?y/n");
 
             char flag = sc1.next().charAt(0);
+            while (!(flag == 'y' || flag == 'Y' || flag == 'n' || flag == 'N')) {
+                System.out.println("Enter correct input!");
+                flag = sc1.next().charAt(0);
 
+            }
             if (flag == 'y' || flag == 'Y') {
 
             } else if (flag == 'n' || flag == 'N') {
