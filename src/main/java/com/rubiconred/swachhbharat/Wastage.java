@@ -105,7 +105,11 @@ public class Wastage {
             if (flag == 'y' || flag == 'Y') {
 
             } else if (flag == 'n' || flag == 'N') {
+                System.out.println(wap.getPointsTable());
+                System.out.println(wap.getWeightsTable());
+
                 break;
+
             }
 
 

@@ -70,5 +70,11 @@ public class WeightsAndPoints {
 
     }
 
+    public Hashtable<String, Integer> getWeightsTable() {
+        return weights;
+    }
 
+    public Hashtable<String, Integer> getPointsTable() {
+        return points;
+    }
 }
