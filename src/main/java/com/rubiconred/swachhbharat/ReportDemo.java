@@ -4,14 +4,21 @@ public class ReportDemo {
     private int count = 0;
     private int typeMaxlength = 0;
     private int brandMaxlength = 0;
+    private int totalWeight = 0;
+    private int totalPoints = 0;
+
 
     public ReportDemo(User user, Wastage wastage) {
         count = wastage.wasteTypeItems.size();
-        System.out.println("             REPORT           ");
-        System.out.println("=================+++++++=============");
-        System.out.println("User:" + user.getuName());
+        System.out.println("               REPORT              ");
+        System.out.println("===============+++++++=============");
+        System.out.println("User Name   :" + user.getuName());
+        System.out.println("Phone Number:" + user.getuPhone());
+        System.out.println("Email       :" + user.getuEmail());
+        Coupon coupon = new Coupon();
+        System.out.println("Coupon code :" + coupon.createRandomCode(8));
         count = wastage.getTotalItems();
-        System.out.println("Total Items:" + count);
+        System.out.println("Total Items :" + count);
         System.out.println("Item Details:");
         for (String type1 : wastage.getWasteTypeItems()) {
             if (typeMaxlength < type1.length()) {
@@ -29,7 +36,9 @@ public class ReportDemo {
             System.out.print(" ");
 
         }
-        System.out.print("BRAND\tWEIGHTS\tPOINTS");
+        System.out.println("\tBRAND\tWEIGHTS\tPOINTS");
+        System.out.println("_____________________________");
+
         for (int i = 0; i < count; i++) {
             System.out.print(i + 1);
 
@@ -47,11 +56,15 @@ public class ReportDemo {
             System.out.print(wastage.getBrandItems().get(i));
             System.out.print("\t");
             System.out.print(wastage.getWeightsList().get(i));
-            System.out.print("\t");
+            totalWeight += wastage.getWeightsList().get(i);
+            System.out.print("\t \t");
             System.out.println(wastage.getPointsList().get(i));
+            totalPoints += wastage.getPointsList().get(i);
 
 
         }
+        System.out.println("_____________________________");
+        System.out.println("Total Weights:" + totalWeight + "gms\tTotal Points:" + totalPoints);
 
 
     }
