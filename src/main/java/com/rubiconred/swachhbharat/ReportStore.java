@@ -13,13 +13,12 @@ public class ReportStore {
     private String email;
 
     public ReportStore(User user, String couponCode, int count, WastageDispose wastageDispose) {
-        userName = user.getuName();
         phoneNumber = user.getuPhone();
         email = user.getuEmail();
         JSONObject obj = new JSONObject();
-        obj.put("UserName", userName);
-        obj.put("PhoneNumber", phoneNumber);
-        obj.put("Email", email);
+        obj.put("UserName", user.getuName());
+        obj.put("PhoneNumber", user.getuPhone());
+        obj.put("Email", user.getuEmail());
         obj.put("CouponCode", couponCode);
         obj.put("TotalItems", count);
 
@@ -30,6 +29,14 @@ public class ReportStore {
         JSONArray brandList = new JSONArray();
         brandList.addAll(wastageDispose.getBrandItems());
         obj.put("BrandType", brandList);
+
+        JSONArray weightsList = new JSONArray();
+        weightsList.addAll(wastageDispose.getWeightsList());
+        obj.put("WeightsList", weightsList);
+
+        JSONArray pointsList = new JSONArray();
+        pointsList.addAll(wastageDispose.getPointsList());
+        obj.put("PointsList", pointsList);
 
         try {
 
