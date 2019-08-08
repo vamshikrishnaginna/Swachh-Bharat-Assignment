@@ -66,6 +66,7 @@ public class ReportDemo {
         }
         System.out.println("---------------------------------------");
         System.out.println("Total Weights:" + totalWeight + "gms\tTotal Points:" + totalPoints);
+        ReportStore rs = new ReportStore(user);
 
 
     }
