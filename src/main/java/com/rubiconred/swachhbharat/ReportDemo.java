@@ -6,6 +6,7 @@ public class ReportDemo {
     private int brandMaxlength = 0;
     private int totalWeight = 0;
     private int totalPoints = 0;
+    private String couponCode;
 
 
     public ReportDemo(User user, WastageDispose wastageDispose) {
@@ -16,7 +17,8 @@ public class ReportDemo {
         System.out.println("Phone Number:" + user.getuPhone());
         System.out.println("Email       :" + user.getuEmail());
         Coupon coupon = new Coupon();
-        System.out.println("Coupon code :" + coupon.createRandomCode(8));
+        couponCode = coupon.createRandomCode(8);
+        System.out.println("Coupon code :" + couponCode);
         count = wastageDispose.getTotalItems();
         System.out.println("Total Items :" + count);
         System.out.println("Item Details:");
@@ -66,7 +68,7 @@ public class ReportDemo {
         }
         System.out.println("---------------------------------------");
         System.out.println("Total Weights:" + totalWeight + "gms\tTotal Points:" + totalPoints);
-        ReportStore rs = new ReportStore(user);
+        ReportStore rs = new ReportStore(user, couponCode);
 
 
     }
