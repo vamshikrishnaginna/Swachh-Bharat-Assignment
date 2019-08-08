@@ -27,6 +27,10 @@ public class ReportStore {
         typeList.addAll(wastageDispose.getWasteTypeItems());
         obj.put("TypeList", typeList);
 
+        JSONArray brandList = new JSONArray();
+        typeList.addAll(wastageDispose.getBrandItems());
+        obj.put("BrandType", brandList);
+
         try {
 
             FileWriter file = new FileWriter("src/main/java/com/rubiconred/swachhbharat/data/data.json");
