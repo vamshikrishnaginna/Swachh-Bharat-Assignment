@@ -19,9 +19,11 @@ public class ReportStore {
         obj.put("UserName", userName);
         obj.put("PhoneNumber", phoneNumber);
         obj.put("Email", email);
+
+
         try {
 
-            FileWriter file = new FileWriter("data.json");
+            FileWriter file = new FileWriter("src/main/java/com/rubiconred/swachhbharat/data/data.json");
             file.write(obj.toJSONString());
             file.flush();
             file.close();
