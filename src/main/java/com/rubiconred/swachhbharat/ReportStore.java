@@ -11,7 +11,7 @@ public class ReportStore {
     private String phoneNumber;
     private String email;
 
-    public ReportStore(User user, String couponCode) {
+    public ReportStore(User user, String couponCode, int count) {
         userName = user.getuName();
         phoneNumber = user.getuPhone();
         email = user.getuEmail();
@@ -20,6 +20,7 @@ public class ReportStore {
         obj.put("PhoneNumber", phoneNumber);
         obj.put("Email", email);
         obj.put("CouponCode", couponCode);
+        obj.put("TotalItems", count);
 
 
         try {
