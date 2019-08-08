@@ -1,5 +1,6 @@
 package com.rubiconred.swachhbharat;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.io.FileWriter;
@@ -11,7 +12,7 @@ public class ReportStore {
     private String phoneNumber;
     private String email;
 
-    public ReportStore(User user, String couponCode, int count) {
+    public ReportStore(User user, String couponCode, int count, WastageDispose wastageDispose) {
         userName = user.getuName();
         phoneNumber = user.getuPhone();
         email = user.getuEmail();
@@ -22,6 +23,9 @@ public class ReportStore {
         obj.put("CouponCode", couponCode);
         obj.put("TotalItems", count);
 
+        JSONArray typeList = new JSONArray();
+        typeList.addAll(wastageDispose.getWasteTypeItems());
+        obj.put("TypeList", typeList);
 
         try {
 
