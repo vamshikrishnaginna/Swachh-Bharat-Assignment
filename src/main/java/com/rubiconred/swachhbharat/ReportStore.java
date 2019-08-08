@@ -28,7 +28,7 @@ public class ReportStore {
         obj.put("TypeList", typeList);
 
         JSONArray brandList = new JSONArray();
-        typeList.addAll(wastageDispose.getBrandItems());
+        brandList.addAll(wastageDispose.getBrandItems());
         obj.put("BrandType", brandList);
 
         try {
