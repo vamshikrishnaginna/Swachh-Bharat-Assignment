@@ -47,7 +47,7 @@ class ReportStore {
             e.printStackTrace();
         }
 
-        System.out.print(obj.toJSONString());
+        //System.out.print(obj.toJSONString());
 
     }
 }
