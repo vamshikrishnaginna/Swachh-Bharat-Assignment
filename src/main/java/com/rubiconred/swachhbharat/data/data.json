@@ -1,27 +1,27 @@
 {
   "PointsList": [
-    12,
     22,
-    25
+    22,
+    22
   ],
   "UserName": "vamshi",
-  "Email": "Vamnhi@gmail.com",
-  "CouponCode": "KIWO3OO7",
+  "Email": "vamsbgi@gmail.com",
+  "CouponCode": "S4XIHXV6",
   "BrandType": [
-    "other",
-    "sprite",
-    "sprite"
+    "coke",
+    "coke",
+    "coke"
   ],
   "WeightsList": [
-    15,
-    20,
-    40
+    35,
+    35,
+    35
   ],
   "PhoneNumber": "8466816658",
   "TotalItems": 3,
   "TypeList": [
     "plastic",
     "plastic",
-    "glass"
+    "plastic"
   ]
 }

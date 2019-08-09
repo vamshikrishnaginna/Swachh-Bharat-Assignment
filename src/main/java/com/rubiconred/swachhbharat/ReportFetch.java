@@ -5,15 +5,19 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 
 public class ReportFetch {
 
-    public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
+//    public static void main(String[] args) throws ParseException, FileNotFoundException, IOException {
+//
+//
+//
+//    }
 
+    public void printValues() throws IOException, ParseException {
         JSONParser parser = new JSONParser();
         Reader reader = new FileReader("src/main/java/com/rubiconred/swachhbharat/data/data.json");
 
@@ -25,11 +29,6 @@ public class ReportFetch {
 
         String phoneNumber = (String) jsonObject.get("PhoneNumber");
         System.out.println("Age = " + phoneNumber);
-
-    }
-
-    private void printValues() {
-
 
     }
 
