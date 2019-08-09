@@ -1,0 +1,49 @@
+{
+  "plastic": {
+    "pepsi": {
+      "weight": "1"
+    },
+    "coke": {
+      "weight": "2"
+    },
+    "sprite": {
+      "weight": "3"
+    },
+    "other": {
+      "weight": "4"
+    }
+  },
+  "Glass": {
+    "pepsi": {
+      "weight": "5"
+    },
+    "coke": {
+      "weight": "6"
+    },
+    "sprite": {
+      "weight": "7"
+    },
+    "other": {
+      "weight": "8"
+    }
+  },
+  "metal": {
+    "pepsi": {
+      "weight": "9"
+    },
+    "coke": {
+      "weight": "10"
+    },
+    "sprite": {
+      "weight": "11"
+    },
+    "other": {
+      "weight": "12"
+    }
+  },
+  "other": {
+    "other": {
+      "weight": "13"
+    }
+  }
+}

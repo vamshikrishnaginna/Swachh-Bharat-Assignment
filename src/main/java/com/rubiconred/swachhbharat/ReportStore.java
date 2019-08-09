@@ -6,15 +6,13 @@ import org.json.simple.JSONObject;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class ReportStore {
+class ReportStore {
 
     private String userName;
-    private String phoneNumber;
-    private String email;
 
-    public ReportStore(User user, String couponCode, int count, WastageDispose wastageDispose) {
-        phoneNumber = user.getuPhone();
-        email = user.getuEmail();
+    ReportStore(User user, String couponCode, int count, WastageDispose wastageDispose) {
+        String phoneNumber = user.getuPhone();
+        String email = user.getuEmail();
         JSONObject obj = new JSONObject();
         obj.put("UserName", user.getuName());
         obj.put("PhoneNumber", user.getuPhone());

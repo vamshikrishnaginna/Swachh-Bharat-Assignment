@@ -1,8 +1,7 @@
 package com.rubiconred.swachhbharat;
 
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
+import com.google.gson.Gson;
 import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
@@ -18,17 +17,23 @@ public class ReportFetch {
 //    }
 
     public void printValues() throws IOException, ParseException {
-        JSONParser parser = new JSONParser();
-        Reader reader = new FileReader("src/main/java/com/rubiconred/swachhbharat/data/data.json");
 
-        Object jsonObj = parser.parse(reader);
 
-        JSONObject jsonObject = (JSONObject) jsonObj;
-        String name = (String) jsonObject.get("UserName");
-        System.out.println("Name = " + name);
-
-        String phoneNumber = (String) jsonObject.get("PhoneNumber");
-        System.out.println("Age = " + phoneNumber);
+//        JSONParser parser = new JSONParser();
+        Reader reader = new FileReader("src/main/java/com/rubiconred/swachhbharat/data/weights.json");
+        Gson gson = new Gson();
+        ReportDemo reportDemo = gson.fromJson(reader, ReportDemo.class);
+        System.out.println(reportDemo);
+        System.out.println(reportDemo.g);
+//        Object jsonObj = parser.parse(reader);
+//
+//        JSONObject jsonObject = (JSONObject) jsonObj;
+//        String type = (String) jsonObject.get("plastic");
+//        System.out.println("type = " + type);
+//
+//
+//        String phoneNumber = (String) jsonObject.get("PhoneNumber");
+//        System.out.println("Age = " + phoneNumber);
 
     }
 
