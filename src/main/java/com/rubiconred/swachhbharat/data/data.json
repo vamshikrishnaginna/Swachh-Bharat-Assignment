@@ -1,23 +1,19 @@
 {
-  "PointsList": [
-    22,
-    22
+  "phoneNumber": "8466816658",
+  "typeList": [
+    "plastic"
   ],
-  "UserName": "balayya",
-  "Email": "vandiph@gmail.com",
-  "CouponCode": "N8REP3QS",
-  "BrandType": [
-    "coke",
+  "count": 1,
+  "brandList": [
     "coke"
   ],
-  "WeightsList": [
-    35,
+  "userName": "pikachu",
+  "weights": [
     35
   ],
-  "PhoneNumber": "7894561330",
-  "TotalItems": 2,
-  "TypeList": [
-    "plastic",
-    "plastic"
+  "couponCode": "WFWJQIMI",
+  "email": "vamshi@gmail.com",
+  "points": [
+    22
   ]
 }

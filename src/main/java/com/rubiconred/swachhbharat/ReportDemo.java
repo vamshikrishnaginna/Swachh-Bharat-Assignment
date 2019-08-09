@@ -7,10 +7,10 @@ public class ReportDemo {
     private String userName;
     private String phoneNumber;
     private String email;
-    private ArrayList<String> type;
-    private ArrayList<String> brand;
+    private ArrayList<String> typeList;
+    private ArrayList<String> brandList;
     private ArrayList<Integer> points;
-    private ArrayList<Integer> weight;
+    private ArrayList<Integer> weights;
 
 
     private int totalWeight = 0;
@@ -30,10 +30,10 @@ public class ReportDemo {
         email = user.getuEmail();
         Coupon coupon = new Coupon();
         couponCode = coupon.createRandomCode(8);
-        type = wastageDispose.getWasteTypeItems();
-        brand = wastageDispose.getBrandItems();
+        typeList = wastageDispose.getWasteTypeItems();
+        brandList = wastageDispose.getBrandItems();
         points = wastageDispose.getPointsList();
-        weight = wastageDispose.getWeightsList();
+        weights = wastageDispose.getWeightsList();
         System.out.println("               REPORT              ");
         System.out.println("===============+++++++=============");
         System.out.println("User Name   :" + userName);
@@ -43,12 +43,12 @@ public class ReportDemo {
         count = wastageDispose.getTotalItems();
         System.out.println("Total Items :" + count);
         System.out.println("Item Details:");
-        for (String type1 : type) {
+        for (String type1 : typeList) {
             if (typeMaxlength < type1.length()) {
                 typeMaxlength = type1.length();
             }
         }
-        for (String brand1 : brand) {
+        for (String brand1 : brandList) {
             if (brandMaxlength < brand1.length()) {
                 brandMaxlength = brand1.length();
             }
@@ -68,22 +68,22 @@ public class ReportDemo {
 
             System.out.print("\t");
 
-            System.out.print(type.get(i));
+            System.out.print(typeList.get(i));
 
-            for (int j = 0; j <= typeMaxlength - type.get(i).length(); j++) {
+            for (int j = 0; j <= typeMaxlength - typeList.get(i).length(); j++) {
 
                 System.out.print(" ");
 
             }
 
             System.out.print("\t");
-            System.out.print(brand.get(i));
+            System.out.print(brandList.get(i));
             System.out.print("\t");
 
-            System.out.print(weight.get(i));
+            System.out.print(weights.get(i));
 
 
-            totalWeight += weight.get(i);
+            totalWeight += weights.get(i);
             System.out.print("\t \t");
             System.out.println(points.get(i));
             totalPoints += points.get(i);
@@ -126,19 +126,19 @@ public class ReportDemo {
     }
 
     public ArrayList<String> getType() {
-        return type;
+        return typeList;
     }
 
     public void setType(ArrayList<String> type) {
-        this.type = type;
+        this.typeList = type;
     }
 
     public ArrayList<String> getBrand() {
-        return brand;
+        return brandList;
     }
 
     public void setBrand(ArrayList<String> brand) {
-        this.brand = brand;
+        this.brandList = brand;
     }
 
     public ArrayList<Integer> getPoints() {
@@ -150,11 +150,11 @@ public class ReportDemo {
     }
 
     public ArrayList<Integer> getWeight() {
-        return weight;
+        return weights;
     }
 
     public void setWeight(ArrayList<Integer> weight) {
-        this.weight = weight;
+        this.weights = weight;
     }
 
     public int getTotalWeight() {
@@ -185,4 +185,20 @@ public class ReportDemo {
         return count;
     }
 
+    @Override
+    public String toString() {
+        return "ReportDemo{" +
+                "count=" + count +
+                ", userName='" + userName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", type=" + typeList +
+                ", brand=" + brandList +
+                ", points=" + points +
+                ", weight=" + weights +
+                ", totalWeight=" + totalWeight +
+                ", totalPoints=" + totalPoints +
+                ", couponCode='" + couponCode + '\'' +
+                '}';
+    }
 }

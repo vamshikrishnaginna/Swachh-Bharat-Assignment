@@ -24,7 +24,7 @@ public class ReportFetch {
         Gson gson = new Gson();
         ReportDemo reportDemo = gson.fromJson(reader, ReportDemo.class);
         System.out.println(reportDemo);
-        System.out.println(reportDemo.getUserName());
+
 
 //        Gson gson = new Gson();
 //

@@ -10,9 +10,9 @@ import java.io.IOException;
 public class App {
     public static void main(String[] args) throws IOException, ParseException {
 
-//        User newUser = new User();
-//        WastageDispose uWastageDispose = new WastageDispose();
-//        ReportDemo report = new ReportDemo(newUser, uWastageDispose);
+        User newUser = new User();
+        WastageDispose uWastageDispose = new WastageDispose();
+        ReportDemo report = new ReportDemo(newUser, uWastageDispose);
 
         //XStream xs = new XStream();
         //WeightsAndPoints wap=new WeightsAndPoints();
