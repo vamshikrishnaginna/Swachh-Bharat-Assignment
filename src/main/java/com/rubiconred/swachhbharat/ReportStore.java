@@ -6,14 +6,18 @@ import org.json.simple.JSONObject;
 import java.io.FileWriter;
 import java.io.IOException;
 
+
 class ReportStore {
 
     private String userName;
 
-    ReportStore(User user, String couponCode, int count, WastageDispose wastageDispose) {
+    ReportStore(User user, String couponCode, int count, WastageDispose wastageDispose,
+                String timeStamp) {
         String phoneNumber = user.getuPhone();
         String email = user.getuEmail();
         JSONObject obj = new JSONObject();
+        JSONObject objParent = new JSONObject();
+        obj.put("timeStamp", timeStamp);
         obj.put("userName", user.getuName());
         obj.put("phoneNumber", user.getuPhone());
         obj.put("email", user.getuEmail());
@@ -35,13 +39,14 @@ class ReportStore {
         JSONArray pointsList = new JSONArray();
         pointsList.addAll(wastageDispose.getPointsList());
         obj.put("points", pointsList);
+        objParent.put("report", obj);
 
 
 
         try {
 
             FileWriter file = new FileWriter("src/main/java/com/rubiconred/swachhbharat/data/data.json");
-            file.write(obj.toJSONString());
+            file.write(objParent.toJSONString());
             file.flush();
             file.close();
 
