@@ -26,26 +26,29 @@ public class UserRegister {
         patternPhoneNumber = Pattern.compile(PHONE_PATTERN);
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("          Register Here          ");
-        System.out.println("=================================");
+
+        System.out.println("                      Welcome to Kisko                         ");
+        System.out.println("===============================================================");
+        System.out.println("                       Register Here                            ");
+        System.out.println("===============================================================");
         System.out.println("Enter the name: ");
         uName = sc.nextLine();
-        System.out.println("Enter the phone number: ");
+        System.out.println("Hey "+uName +" enter the phone number: ");
         uPhone = sc.nextLine();
         while (!checkPhoneNumber(uPhone)) {
-            System.out.println("Enter the valid Phone Number..!!");
+            System.out.println("Oops! enter the valid Phone Number..!!");
             uPhone = sc.nextLine();
 
         }
 
-        System.out.println("Enter the email-id: ");
+        System.out.println("Hey "+uName+" enter the email-id: ");
         uEmail = sc.nextLine();
         while (!checkEmail(uEmail)) {
-            System.out.println("Enter the valid mail..!!");
+            System.out.println("Sorry! enter the valid mail..!!");
             uEmail = sc.nextLine();
 
         }
-        System.out.println("=================================");
+        System.out.println("===============================================================");
 
     }
 

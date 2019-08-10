@@ -44,7 +44,7 @@ class ReportStore {
 
         try {
 
-            FileWriter file = new FileWriter("src/main/java/com/rubiconred/swachhbharat/data/data.json");
+            FileWriter file = new FileWriter("src/main/java/com/rubiconred/swachhbharat/data/userdata/"+userName+transactionId+".json");
             file.write(objParent.toJSONString());
             file.flush();
             file.close();
