@@ -10,6 +10,7 @@ public class WastageDispose {
     private String brand;
     private int points = 0;
     private int weights = 0;
+    private
     ArrayList<Integer> weightsList = new ArrayList<>();
     ArrayList<String> wasteTypeItems = new ArrayList<>();
     ArrayList<String> brandItems = new ArrayList<>();

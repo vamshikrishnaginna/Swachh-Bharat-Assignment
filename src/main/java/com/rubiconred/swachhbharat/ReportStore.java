@@ -12,12 +12,13 @@ class ReportStore {
     private String userName;
 
     ReportStore(User user, String couponCode, int count, WastageDispose wastageDispose,
-                String timeStamp) {
+                String timeStamp, int transactionId) {
         String phoneNumber = user.getuPhone();
         String email = user.getuEmail();
         JSONObject obj = new JSONObject();
         JSONObject objParent = new JSONObject();
         obj.put("timeStamp", timeStamp);
+        obj.put("transactionId", transactionId);
         obj.put("userName", user.getuName());
         obj.put("phoneNumber", user.getuPhone());
         obj.put("email", user.getuEmail());
