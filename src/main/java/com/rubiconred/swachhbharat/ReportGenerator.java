@@ -120,7 +120,7 @@ public class ReportGenerator {
         ReportStore rs;
         //checks if data is fetched from file else write the data of new registered transcation
         if (!isDataFromFile)
-            rs = new ReportStore(user, couponCode, count, wastageDispose, timeStamp);
+            rs = new ReportStore(user, couponCode, count, wastageDispose, timeStamp, trasactionId);
 
 
     }
