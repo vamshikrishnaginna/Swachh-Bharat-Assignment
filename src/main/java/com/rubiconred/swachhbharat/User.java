@@ -1,3 +1,5 @@
+//model class
+
 package com.rubiconred.swachhbharat;
 
 public class User {

@@ -2,6 +2,7 @@ package com.rubiconred.swachhbharat;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class WastageDispose {
 
@@ -16,13 +17,14 @@ public class WastageDispose {
     private int totalItems = 0;
 
 
-    public WastageDispose() {
+    public WastageDispose() throws Exception {
+
         takeInputs();
     }
 
-    public void takeInputs() {
+    private void takeInputs() throws Exception {
 
-        WeightsAndPoints wap = new WeightsAndPoints();
+
         while (true) {
             System.out.println("Select the category of waste");
             System.out.println("1.Plastic");
@@ -85,9 +87,9 @@ public class WastageDispose {
 
                 brand = "other";
             }
-
-            weights = wap.getWeight(wasteType + "_" + brand);
-            points = wap.getPoints(wasteType + "_" + brand);
+            WeightsAndPoints weightsObject = new WeightsAndPoints(wasteType, brand);
+            weights = weightsObject.getWeight();
+            points = weightsObject.getPoints();
             wasteTypeItems.add(wasteType);
             brandItems.add(brand);
             weightsList.add(weights);
@@ -107,6 +109,12 @@ public class WastageDispose {
             } else if (flag == 'n' || flag == 'N') {
                 // System.out.println(wap.getPointsTable());
                 //System.out.println(wap.getWeightsTable());
+                System.out.print("Recycling.");
+                for (int i = 0; i < 3; i++) {
+                    TimeUnit.SECONDS.sleep(1);
+                    System.out.print(".");
+                }
+                System.out.println(" ");
 
                 break;
 

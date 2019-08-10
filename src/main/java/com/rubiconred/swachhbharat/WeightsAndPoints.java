@@ -1,80 +1,86 @@
 package com.rubiconred.swachhbharat;
 
-import java.util.Hashtable;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import static com.rubiconred.swachhbharat.ReportFetch.readJsonSimpleDemo;
 
 public class WeightsAndPoints {
-    Hashtable<String, Integer> weights = new Hashtable<String, Integer>();
-    Hashtable<String, Integer> points = new Hashtable<String, Integer>();
-    public WeightsAndPoints() {
+    private String type;
+    private String brand;
+    private int weight;
+    private int points;
 
-        /*Weights*/
-        /*Plastic waste */
-
-        weights.put("plastic_pepsi", 30);
-        weights.put("plastic_coke", 35);
-        weights.put("plastic_sprite", 20);
-        weights.put("plastic_other", 15);
-
-        /*Metal waste */
-
-        weights.put("metal_pepsi", 60);
-        weights.put("metal_coke", 65);
-        weights.put("metal_sprite", 50);
-        weights.put("metal_other", 45);
-
-        /*Glass waste */
-
-        weights.put("glass_pepsi", 47);
-        weights.put("glass_coke", 50);
-        weights.put("glass_sprite", 40);
-        weights.put("glass_other", 29);
-        /*other waste */
-
-        weights.put("other_other", 30);
-
-        /*Points*/
-        /*Plastic waste */
-
-        points.put("plastic_pepsi", 20);
-        points.put("plastic_coke", 22);
-        points.put("plastic_sprite", 22);
-        points.put("plastic_other", 12);
-
-        /*Metal waste */
-
-        points.put("metal_pepsi", 35);
-        points.put("metal_coke", 37);
-        points.put("metal_sprite", 30);
-        points.put("metal_other", 27);
-
-        /*Glass waste */
-
-        points.put("glass_pepsi", 30);
-        points.put("glass_coke", 30);
-        points.put("glass_sprite", 25);
-        points.put("glass_other", 19);
-        /*other waste */
-
-        points.put("other_other", 20);
-
+    public WeightsAndPoints(String type, String brand) throws Exception {
+        this.type = type;
+        this.brand = brand;
+        weight = findWeight(type, brand);
+        points = calculatePoints(weight);
 
     }
 
-    public int getWeight(String type) {
-        return weights.get(type);
+    private int findWeight(String type, String brand) throws Exception {
+        String typeInFile;
+        String brandInFile;
 
+        JSONObject object = (JSONObject) readJsonSimpleDemo("src/main/java/com/rubiconred/swachhbharat/data/weights.json");
+        JSONObject weightsObject = (JSONObject) object.get("weights");
+        JSONArray jsonArray = (JSONArray) weightsObject.get("waste");
+
+
+        for (int i = 0; i < jsonArray.size(); i++) {
+
+            JSONObject newObject = (JSONObject) jsonArray.get(i);
+            brandInFile = newObject.get("brand").toString();
+            typeInFile = newObject.get("type").toString();
+
+            if (typeInFile.equals(type) && brandInFile.equals(brand)) {
+                return Integer.parseInt(newObject.get("weight").toString());
+
+            }
+
+        }
+        return 0;
     }
 
-    public int getPoints(String type) {
-        return points.get(type);
-
+    public String getType() {
+        return type;
     }
 
-    public Hashtable<String, Integer> getWeightsTable() {
-        return weights;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public Hashtable<String, Integer> getPointsTable() {
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getPoints() {
         return points;
+    }
+
+    public int calculatePoints(int weight) {
+        return ((weight / 2) + 5);
+    }
+
+    @Override
+    public String toString() {
+        return "WeightsAndPoints{" +
+                "type='" + type + '\'' +
+                ", brand='" + brand + '\'' +
+                ", weight=" + weight +
+                '}';
     }
 }
