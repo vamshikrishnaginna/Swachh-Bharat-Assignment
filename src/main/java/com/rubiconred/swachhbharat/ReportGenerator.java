@@ -47,8 +47,8 @@ public class ReportGenerator {
         System.out.println("                             REPORT                                  ");
         System.out.println(
                 "=========================================================================");
-        System.out.println("Transaction id:" + trasactionId);
-        System.out.println("User Name     :" + userName + "                     TimeStamp:" + timeStamp);
+        System.out.println("Transaction id:" + trasactionId+"           "+" TimeStamp:" + timeStamp);
+        System.out.println("User Name     :" + userName);
 
         System.out.println("Phone Number  :" + phoneNumber);
         System.out.println("Email         :" + email);
@@ -113,7 +113,7 @@ public class ReportGenerator {
                 .println("         Thank You for your contribution " + userName);
         System.out.println("");
         RandomSlogan slogan = new RandomSlogan();
-        System.out.println("***********" + slogan.getSlogan() + "**********");
+        System.out.println("***************" + slogan.getSlogan() + "**************");
 
 
         //Details are stored in json file
