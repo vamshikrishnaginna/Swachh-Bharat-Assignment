@@ -1,8 +1,12 @@
 package com.rubiconred.swachhbharat;
 
+
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-public class ReportDemo {
+public class ReportGenerator {
     private int count = 0;
     private String userName;
     private String phoneNumber;
@@ -19,30 +23,39 @@ public class ReportDemo {
 
     private int typeMaxlength = 0;
     private int brandMaxlength = 0;
+    Date d1;
 
+    public ReportGenerator() {
+    }
 
-
-    public ReportDemo(User user, WastageDispose wastageDispose) {
+    public ReportGenerator(User user, WastageDispose wastageDispose, boolean isDataFromFile) {
         count = wastageDispose.wasteTypeItems.size();
-
+        java.util.Date d1 = new java.util.Date();
+        DateFormat df = new SimpleDateFormat("dd/MM/YYYY - hh:mm:ss");
+        String timeStamp = df.format(d1);
+        TransactionIdGenerator id = new TransactionIdGenerator(user);
+        int trasactionId = id.getId();
         userName = user.getuName();
         phoneNumber = user.getuPhone();
         email = user.getuEmail();
-        Coupon coupon = new Coupon();
-        couponCode = coupon.createRandomCode(8);
+        Coupon coupon = new Coupon(user);
+        couponCode = coupon.getCouponCode();
         typeList = wastageDispose.getWasteTypeItems();
         brandList = wastageDispose.getBrandItems();
         points = wastageDispose.getPointsList();
         weights = wastageDispose.getWeightsList();
-        System.out.println("               REPORT              ");
-        System.out.println("===============+++++++=============");
-        System.out.println("User Name   :" + userName);
-        System.out.println("Phone Number:" + phoneNumber);
-        System.out.println("Email       :" + email);
-        System.out.println("Coupon code :" + couponCode);
+        System.out.println("                             REPORT                                  ");
+        System.out.println(
+                "=========================================================================");
+        System.out.println("Transaction id:" + trasactionId);
+        System.out.println("User Name     :" + userName + "                     TimeStamp:" + timeStamp);
+
+        System.out.println("Phone Number  :" + phoneNumber);
+        System.out.println("Email         :" + email);
+        System.out.println("Coupon code   :" + couponCode);
         count = wastageDispose.getTotalItems();
-        System.out.println("Total Items :" + count);
-        System.out.println("Item Details:");
+        System.out.println("Total Items   :" + count);
+        System.out.println("Item Details  :");
         for (String type1 : typeList) {
             if (typeMaxlength < type1.length()) {
                 typeMaxlength = type1.length();
@@ -91,8 +104,23 @@ public class ReportDemo {
 
         }
         System.out.println("---------------------------------------");
-        System.out.println("Total Weights:" + totalWeight + "gms\tTotal Points:" + totalPoints);
-        ReportStore rs = new ReportStore(user, couponCode, count, wastageDispose);
+        System.out.println(" ");
+        System.out.println("Total WeightsAndPoints:" + totalWeight + "gms\t         Total " +
+                "Points:" + totalPoints);
+        System.out.println(
+                "=========================================================================");
+        System.out
+                .println("         Thank You for your contribution " + userName);
+        System.out.println("");
+        RandomSlogan slogan = new RandomSlogan();
+        System.out.println("***********" + slogan.getSlogan() + "**********");
+
+
+        //Details are stored in json file
+        ReportStore rs;
+        //checks if data is fetched from file else write the data of new registered transcation
+        if (!isDataFromFile)
+            rs = new ReportStore(user, couponCode, count, wastageDispose, timeStamp);
 
 
     }
@@ -186,6 +214,7 @@ public class ReportDemo {
     }
 
     @Override
+
     public String toString() {
         return "ReportDemo{" +
                 "count=" + count +
