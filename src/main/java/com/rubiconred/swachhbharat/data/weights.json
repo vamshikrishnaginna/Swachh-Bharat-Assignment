@@ -2,15 +2,70 @@
     "weights": {
         "waste": [
             {
-                "weight": 27,
+                "weight": 30,
                 "type": "plastic",
                 "brand": "pepsi"
             },
             {
-                "weight": 25,
+                "weight": 35,
                 "type": "plastic",
                 "brand": "coke"
+            },
+            {
+                "weight": 20,
+                "type": "plastic",
+                "brand": "sprite"
+            },
+            {
+                "weight": 15,
+                "type": "plastic",
+                "brand": "other"
+            },
+            {
+                "weight": 60,
+                "type": "metal",
+                "brand": "pepsi"
+            },
+            {
+                "weight": 65,
+                "type": "metal",
+                "brand": "coke"
+            },
+            {
+                "weight": 50,
+                "type": "metal",
+                "brand": "sprite"
+            },
+            {
+                "weight": 45,
+                "type": "metal",
+                "brand": "other"
+            },
+            {
+                "weight": 47,
+                "type": "glass",
+                "brand": "pepsi"
+            },
+            {
+                "weight": 50,
+                "type": "glass",
+                "brand": "coke"
+            },
+            {
+                "weight": 40,
+                "type": "glass",
+                "brand": "sprite"
+            },
+            {
+                "weight": 29,
+                "type": "glass",
+                "brand": "other"
+            },
+            {
+                "weight": 30,
+                "type": "other",
+                "brand": "other"
             }
         ]
-  }
+    }
 }

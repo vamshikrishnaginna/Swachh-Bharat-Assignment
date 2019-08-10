@@ -1,19 +1,22 @@
 {
-  "phoneNumber": "8466816658",
-  "typeList": [
-    "plastic"
-  ],
-  "count": 1,
-  "brandList": [
-    "coke"
-  ],
-  "userName": "pikachu",
-  "weights": [
-    35
-  ],
-  "couponCode": "WFWJQIMI",
-  "email": "vamshi@gmail.com",
-  "points": [
-    22
-  ]
+    "report": {
+        "timeStamp": "10\/08\/2019 - 05:43:44",
+        "phoneNumber": "8466816658",
+        "typeList": [
+            "other"
+        ],
+        "count": 1,
+        "brandList": [
+            "other"
+        ],
+        "userName": "vamsahi",
+        "weights": [
+            30
+        ],
+        "couponCode": "XFIORSNC",
+        "email": "vamshi@gmail.com",
+        "points": [
+            20
+        ]
+    }
 }
