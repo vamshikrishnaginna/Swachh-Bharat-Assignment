@@ -26,101 +26,106 @@ public class WastageDispose {
 
 
         while (true) {
-            System.out.println("Select the category of waste");
-            System.out.println("1.Plastic");
-            System.out.println("2.Glass");
-            System.out.println("3.Metal");
-            System.out.println("4.Other");
-            Scanner sc1 = new Scanner(System.in);
-            switch (sc1.nextInt()) {
-                case 1:
-                    wasteType = "plastic";
-                    break;
+            try {
 
-                case 2:
-                    wasteType = "glass";
-                    break;
-
-                case 3:
-                    wasteType = "metal";
-                    break;
-
-                case 4:
-                    wasteType = "other";
-                    break;
-                default:
-                    System.out.println("Please select the valid waste category");
-                    break;
-
-
-            }
-            if (wasteType != "other") {
-            System.out.println("Select the brand");
-            System.out.println("1.Pepsi");
-            System.out.println("2.Coke");
-            System.out.println("3.Sprite");
-            System.out.println("4.Other");
-            Scanner sc2 = new Scanner(System.in);
-                switch (sc2.nextInt()) {
+                System.out.println("Select the category of waste");
+                System.out.println("1.Plastic");
+                System.out.println("2.Glass");
+                System.out.println("3.Metal");
+                System.out.println("4.Other");
+                Scanner sc1 = new Scanner(System.in);
+                switch (sc1.nextInt()) {
                     case 1:
-                        brand = "pepsi";
+                        wasteType = "plastic";
                         break;
 
                     case 2:
-                        brand = "coke";
+                        wasteType = "glass";
                         break;
 
                     case 3:
-                        brand = "sprite";
+                        wasteType = "metal";
                         break;
 
                     case 4:
-                        brand = "other";
+                        wasteType = "other";
                         break;
                     default:
-                        System.out.println("Please select the valid brand");
+                        System.out.println("Please select the valid waste category");
                         break;
 
 
                 }
-            } else {
+                if (wasteType != "other") {
+                    System.out.println("Select the brand");
+                    System.out.println("1.Pepsi");
+                    System.out.println("2.Coke");
+                    System.out.println("3.Sprite");
+                    System.out.println("4.Other");
+                    Scanner sc2 = new Scanner(System.in);
+                    switch (sc2.nextInt()) {
+                        case 1:
+                            brand = "pepsi";
+                            break;
 
-                brand = "other";
-            }
-            WeightsAndPoints weightsObject = new WeightsAndPoints(wasteType, brand);
-            weights = weightsObject.getWeight();
-            points = weightsObject.getPoints();
-            wasteTypeItems.add(wasteType);
-            brandItems.add(brand);
-            weightsList.add(weights);
-            pointsList.add(points);
-            totalItems = wasteTypeItems.size();
+                        case 2:
+                            brand = "coke";
+                            break;
 
-            System.out.println("Do you want to add more?y/n");
+                        case 3:
+                            brand = "sprite";
+                            break;
 
-            char flag = sc1.next().charAt(0);
-            while (!(flag == 'y' || flag == 'Y' || flag == 'n' || flag == 'N')) {
-                System.out.println("Enter correct input!");
-                flag = sc1.next().charAt(0);
+                        case 4:
+                            brand = "other";
+                            break;
+                        default:
+                            System.out.println("Please select the valid brand");
+                            break;
 
-            }
-            if (flag == 'y' || flag == 'Y') {
 
-            } else if (flag == 'n' || flag == 'N') {
-                // System.out.println(wap.getPointsTable());
-                //System.out.println(wap.getWeightsTable());
-                System.out.print("Recycling.");
-                for (int i = 0; i < 3; i++) {
-                    TimeUnit.SECONDS.sleep(1);
-                    System.out.print(".");
+                    }
+                } else {
+
+                    brand = "other";
                 }
-                System.out.println(" ");
+                WeightsAndPoints weightsObject = new WeightsAndPoints(wasteType, brand);
+                weights = weightsObject.getWeight();
+                points = weightsObject.getPoints();
+                wasteTypeItems.add(wasteType);
+                brandItems.add(brand);
+                weightsList.add(weights);
+                pointsList.add(points);
+                totalItems = wasteTypeItems.size();
+                System.out.println("");
+                System.out.println("Do you want to add more?y/n");
 
-                break;
+                char flag = sc1.next().charAt(0);
+                while (!(flag == 'y' || flag == 'Y' || flag == 'n' || flag == 'N')) {
+                    System.out.println("Enter correct input!");
+                    flag = sc1.next().charAt(0);
 
+                }
+                if (flag == 'y' || flag == 'Y') {
+
+                } else {
+                    // System.out.println(wap.getPointsTable());
+                    //System.out.println(wap.getWeightsTable());
+                    System.out.print("Recycling.");
+                    for (int i = 0; i < 3; i++) {
+                        TimeUnit.SECONDS.sleep(1);
+                        System.out.print(".");
+                    }
+                    System.out.println(" ");
+
+                    break;
+
+                }
+
+
+            } catch (Exception e) {
+                System.out.println("Enter valid input!");
             }
-
-
         }
 
     }

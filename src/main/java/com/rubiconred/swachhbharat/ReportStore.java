@@ -31,7 +31,6 @@ class ReportStore {
         JSONArray brandList = new JSONArray();
         brandList.addAll(wastageDispose.getBrandItems());
         obj.put("brandList", brandList);
-
         JSONArray weightsList = new JSONArray();
         weightsList.addAll(wastageDispose.getWeightsList());
         obj.put("weights", weightsList);
@@ -40,7 +39,6 @@ class ReportStore {
         pointsList.addAll(wastageDispose.getPointsList());
         obj.put("points", pointsList);
         objParent.put("report", obj);
-
 
 
         try {
