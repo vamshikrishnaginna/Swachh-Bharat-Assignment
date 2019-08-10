@@ -28,7 +28,7 @@ public class UserRegister {
         patterUserName = Pattern.compile(USERNAME_PATTERN);
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("                      Welcome to Kisko                         ");
+        System.out.println("                      Welcome to Kiosk                         ");
         System.out.println("===============================================================");
         System.out.println("                       Register Here                           ");
         System.out.println("===============================================================");
@@ -37,7 +37,7 @@ public class UserRegister {
 
         System.out.println("Enter the name: ");
         uName = sc.nextLine();
-        while (!checkUserName(uPhone)) {
+        while (!checkUserName(uName)) {
             System.out.println("Oops! enter the valid user name..!!");
             uName = sc.nextLine();
 
