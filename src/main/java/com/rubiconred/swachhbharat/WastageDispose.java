@@ -35,7 +35,12 @@ public class WastageDispose {
                 System.out.println("3.Metal");
                 System.out.println("4.Other");
                 Scanner sc1 = new Scanner(System.in);
-                switch (sc1.nextInt()) {
+                int t=sc1.nextInt();
+                while(!(t>0&&t<5))
+                { System.out.println("Please select the valid waste category");
+                    t=sc1.nextInt();
+                }
+                switch (t) {
                     case 1:
                         wasteType = "plastic";
                         break;
@@ -52,7 +57,7 @@ public class WastageDispose {
                         wasteType = "other";
                         break;
                     default:
-                        System.out.println("Please select the valid waste category");
+
                         break;
 
 
@@ -64,7 +69,12 @@ public class WastageDispose {
                     System.out.println("3.Sprite");
                     System.out.println("4.Other");
                     Scanner sc2 = new Scanner(System.in);
-                    switch (sc2.nextInt()) {
+                    int b=sc2.nextInt();
+                    while(!(b>0&&b<5))
+                    { System.out.println("Please select the valid waste brand");
+                        b=sc1.nextInt();
+                    }
+                    switch (b) {
                         case 1:
                             brand = "pepsi";
                             break;
@@ -81,7 +91,7 @@ public class WastageDispose {
                             brand = "other";
                             break;
                         default:
-                            System.out.println("Please select the valid brand");
+
                             break;
 
 
@@ -126,6 +136,7 @@ public class WastageDispose {
 
             } catch (Exception e) {
                 System.out.println("Enter valid input!");
+                continue;
             }
         }
 

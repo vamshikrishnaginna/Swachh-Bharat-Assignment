@@ -14,9 +14,10 @@ public class UserRegister {
                     + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     private static final String PHONE_PATTERN = "(0/91)?[7-9][0-9]{9}";
-
+    private static final String USERNAME_PATTERN= "^[a-zA-Z][a-zA-Z0-9.,$;]+$";
     private Pattern patternEmail;
     private Pattern patternPhoneNumber;
+    private Pattern patterUserName;
     private Matcher matcher;
 
 
@@ -24,15 +25,23 @@ public class UserRegister {
 
         patternEmail = Pattern.compile(EMAIL_PATTERN);
         patternPhoneNumber = Pattern.compile(PHONE_PATTERN);
-
+        patterUserName = Pattern.compile(USERNAME_PATTERN);
         Scanner sc = new Scanner(System.in);
 
         System.out.println("                      Welcome to Kisko                         ");
         System.out.println("===============================================================");
-        System.out.println("                       Register Here                            ");
+        System.out.println("                       Register Here                           ");
         System.out.println("===============================================================");
+
+
+
         System.out.println("Enter the name: ");
         uName = sc.nextLine();
+        while (!checkUserName(uPhone)) {
+            System.out.println("Oops! enter the valid user name..!!");
+            uName = sc.nextLine();
+
+        }
         System.out.println("Hey "+uName +" enter the phone number: ");
         uPhone = sc.nextLine();
         while (!checkPhoneNumber(uPhone)) {
@@ -50,6 +59,11 @@ public class UserRegister {
         }
         System.out.println("===============================================================");
 
+    }
+
+    private boolean checkUserName(String uName) {
+        matcher = patterUserName.matcher(uName);
+        return matcher.matches();
     }
 
     private boolean checkPhoneNumber(String uPhone) {
