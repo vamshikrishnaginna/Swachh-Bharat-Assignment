@@ -62,3 +62,5 @@ To run the project on your machine you need to have the following dependencies i
 ![](src/main/java/com/rubiconred/swachhbharat/diagrams/WasteDispose.PNG)
 ![](src/main/java/com/rubiconred/swachhbharat/diagrams/report.PNG)
 
+* User deatils are store in JSON file in src/main/java/com/rubiconred/swachhbharat/data/userdata/
+
