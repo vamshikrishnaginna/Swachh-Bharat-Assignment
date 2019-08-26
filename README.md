@@ -1,4 +1,4 @@
-# Superfluous Kiosk Project
+# Kiosk Project
 ## About the project
 This project provide user with a platform to dispose waste (like plastic, metal tins, glass) and also the brand of the item. It generates a detailed report on the items disposed with their weights and points earned with unique coupon code and transaction id.   
 ## Installation
